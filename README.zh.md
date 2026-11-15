@@ -1,14 +1,10 @@
-
 # Turbowarp Android
 
 > 把完整的 TurboWarp 编辑器装进手机，断网也能打开作品。
-> 
+>
 > [下载](https://github.com/Toushou-114514/Turbowarp_Android/releases/latest)
 
-[繁體中文](https://github.com/Toushou-114514/Turbowarp_Android/edit/toushou/README.md) | 
- [简体中文](https://github.com/Toushou-114514/Turbowarp_Android/edit/toushou/README.zh.md) | 
- [English](https://github.com/Toushou-114514/Turbowarp_Android/edit/toushou/README.en.md)
-
+[繁體中文](README.md) | **简体中文** | [English](README.en.md)
 
 ---
 
