@@ -1,0 +1,20 @@
+*.java linguist-detectable=true
+*.js linguist-detectable=true
+*.xml linguist-detectable=true
+
+*.md linguist-detectable=false
+*.txt linguist-detectable=false
+
+.idea/* linguist-detectable=false
+out/* linguist-detectable=false
+target/* linguist-detectable=false
+
+*.jar linguist-detectable=false
+*.exe linguist-detectable=false
+*.zip linguist-detectable=false
+
+jre/* linguist-detectable=false
+
+*.png linguist-detectable=false
+*.jpg linguist-detectable=false
+*.ico linguist-detectable=false
