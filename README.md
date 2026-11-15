@@ -4,7 +4,7 @@
 >
 > [下載](https://github.com/Toushou-114514/Turbowarp_Android/releases/latest)
 
-**繁體中文** | [简体中文](README.md) | [English](README.en.md)
+**繁體中文** | [简体中文](README.zh.md) | [English](README.en.md)
 
 ---
 
