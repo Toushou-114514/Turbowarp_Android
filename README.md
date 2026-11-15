@@ -1,6 +1,12 @@
 # Turbowarp Android
 
-> 把完整的 TurboWarp 編輯器裝進手機，離線也能開啟作品。
+> 把完整的 TurboWarp 編輯器裝進手機，斷網也能開啟作品。
+>
+> [下載](https://github.com/Toushou-114514/Turbowarp_Android/releases/latest)
+
+**繁體中文** | [简体中文](README.md) | [English](README.en.md)
+
+---
 
 | 項目 | 說明 |
 | --- | --- |
@@ -59,7 +65,7 @@ Turbowarp Android 是一個 Android 應用程式，把 [TurboWarp](https://turbo
 | --- | --- |
 | 匯出作品 | 把 `.sb3` 存到系統「下載」資料夾 |
 | 重新命名 | 修改作品名稱 |
-| 分享 | 把 `.sb3` 傳送到微信 / QQ 等應用程式 |
+| 分享 | 把 `.sb3` 分享出去 |
 | 刪除 | 刪除作品（會再次確認） |
 
 右下角的 `+` 按鈕新增作品，直接進入編輯器。
@@ -68,7 +74,7 @@ Turbowarp Android 是一個 Android 應用程式，把 [TurboWarp](https://turbo
 
 編輯器就是 TurboWarp 本體，並針對手機做了一點調整：
 
-- **頂端不再有額外的紅色標題列**，全部空間留給編輯器
+- **頂端不再有額外的一條紅色標題列**，全部空間留給編輯器
 - **右上角是應用程式的「儲存」按鈕**，取代 TurboWarp 原本的「儲存到檔案」
 - 已移除用不到 / 不適用的選單項目：`儲存到檔案`、`另存新檔`、`打包作品`、`查看作品頁面`、`TurboWarp 意見回饋`
 - **作品名稱輸入框**（選單列中間）會顯示目前作品名稱；在這裡改名，回到主畫面卡片會同步更新
@@ -81,7 +87,7 @@ Turbowarp Android 是一個 Android 應用程式，把 [TurboWarp](https://turbo
 | 主題色 | 8 種預設色，或點最後的 `+` 用調色盤自訂（R/G/B 滑桿） |
 | 深色模式 | 跟隨系統 / 淺色 / 深色 |
 | 高對比度 | 開 / 關 |
-| 語言 | 跟隨系統 / 中文 / English |
+| 語言 | 跟隨系統 / 中文（僅簡體） / English |
 | 關於 | 版本號、作者、GitHub 儲存庫 |
 
 主題色、深色模式、高對比度、語言會**同時套用到主畫面與編輯器**。
@@ -104,9 +110,10 @@ Turbowarp Android 是一個 Android 應用程式，把 [TurboWarp](https://turbo
 
 ## 安裝
 
-1. 把 `turbowarp_android.apk` 傳到手機
-2. 點擊安裝，若提示「禁止安裝未知來源應用程式」，在系統設定裡允許一次
-3. 開啟應用程式即可使用
+1. 前往 [發佈頁面](https://github.com/Toushou-114514/Turbowarp_Android/releases/latest)
+2. 下載 `turbowarp_android.apk` 檔案
+3. 點擊安裝
+4. 開啟應用程式即可使用
 
 升級時直接覆蓋安裝，**不會遺失已有作品**。
 
@@ -130,7 +137,7 @@ Android 9 以下需要儲存權限，請在系統設定裡給應用程式開啟�
 ## 已知限制
 
 - 造型 / 音效素材庫、擴充功能、從 Scratch 匯入的作品素材需要連網
-- 不支援雲端同步、帳號登入、線上發布作品
+- 不支援雲端同步、帳號登入、線上發佈作品
 - 作品存在應用程式私有目錄，解除安裝會一併刪除，請及時匯出備份
 - 目前沒有平板專用版面，大螢幕上會自動排更多欄
 
@@ -144,46 +151,16 @@ Android 9 以下需要儲存權限，請在系統設定裡給應用程式開啟�
 - Android SDK Build-Tools 34.0.0
 - Android SDK Platform 34（`android.jar`）
 
-**建置**
-
-```bash
-./build.sh
-# 產物：build/turbowarp_android.apk
-```
-
-`build.sh` 會依序：編譯資源 → 連結資源與清單 → 編譯 Java → 產生 dex 並在缺少核心類別時中止 → 打包 → 對齊 → 簽章。
-
-**目錄結構**
-
-```
-原始碼/
-├── AndroidManifest.xml
-├── build.sh                     # 一鍵建置腳本
-├── tw-android.js                # 注入編輯器網頁的腳本（完整版在 assets/www/）
-├── res/
-│   ├── drawable/                # 向量圖示（匯入、設定）
-│   ├── mipmap-*/                # 啟動圖示
-│   └── values/, values-zh/      # 中英文字串與主題
-└── src/app/turbowarp/android/
-    ├── MainActivity.java        # 主畫面：作品網格、匯入、選單
-    ├── EditorActivity.java      # 編輯器：WebView、JS 橋接、儲存
-    ├── SettingsActivity.java    # 設定頁
-    ├── Store.java               # 作品索引與檔案讀寫
-    ├── Prefs.java               # 主題色 / 深色 / 高對比度 / 語言
-    ├── Ui.java                  # 動態配色與通用控件
-    ├── ShareProvider.java       # 分享用的 FileProvider
-    └── Logx.java
-```
-
-`assets/www/` 是從 turbowarp.org 鏡像下來的編輯器網頁（HTML/JS/CSS、積木圖示 SVG、外掛頁面）。應用程式內用 `WebViewClient.shouldInterceptRequest` 把虛擬網域 `https://tw.local` 對應到這些本機檔案，因此可以完全離線執行。
-
 ## 致謝與授權
 
 - 編輯器：[TurboWarp](https://turbowarp.org)，GPL-3.0
 - 積木與執行環境：[Scratch](https://scratch.mit.edu)、scratch-gui、scratch-vm
-- 本專案為非官方專案，與 Scratch 基金會、TurboWarp 團隊無隸屬關係；Scratch 名稱與貓咪標誌是 Scratch 基金會的商標
+- 本專案為非官方專案，與 Scratch 基金會、TurboWarp 團隊無隸屬關係
 
-## 作者
+## 其他
 
 - Toushou — https://github.com/Toushou-114514
 - 儲存庫：https://github.com/Toushou-114514/Turbowarp_Android
+- 特別感謝 [DeepSeek](https://deepseek.com)
+- 本工具安全無毒，要是有毒也是 DeepSeek 寫的
+- 如果覺得做得好，就給儲存庫一個 star ⭐ 吧
