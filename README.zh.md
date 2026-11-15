@@ -3,6 +3,11 @@
 > 把完整的 TurboWarp 编辑器装进手机，断网也能打开作品。
 >
 > [下载](https://github.com/Toushou-114514/Turbowarp_Android/releases/latest)
+>
+> ![Java](https://img.shields.io/badge/Java-71%25-brightgreen?style=flat-square&logo=openjdk)
+![JavaScript](https://img.shields.io/badge/JavaScript-19%25-orange?style=flat-square&logo=javascript)
+![XML](https://img.shields.io/badge/XML-7%25-blue?style=flat-square)
+![Other](https://img.shields.io/badge/Other-3%25-lightgrey?style=flat-square)
 
 [繁體中文](README.md) | **简体中文** | [English](README.en.md)
 
